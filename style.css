@@ -1,0 +1,722 @@
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    background: repeating-linear-gradient(45deg, rgba(196, 51, 15, 0.8) , rgba(255, 199, 14, 0.8) );
+
+}
+
+.contiene{
+    display: flex;
+    flex-direction: row;
+}
+
+.sidenav{
+    flex:1;
+
+    background-color: brown;
+}
+
+/*only 1 side box-shadow */
+.sidenav .title{
+    background-image: url("	https://live.staticflickr.com/65535/49197710168_014f46e3a2_w.jpg");
+    background-position: center;
+    height: 12em;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0px -20px 20px -20px #001f9c inset;
+
+}
+
+.sidenav ul li span{
+    margin-left: 1em;
+}
+
+/*so, for border bottom effects we use the :after as a class to have it put below*/
+.lower:after{
+    content: "";
+    display: block;
+    width: 5em;
+    height: 2px;
+    margin: 0.3em;
+    background-image: linear-gradient(90deg, #efa8b0, #a89cc8, red);
+}
+
+.sidenav ul li{
+    display: flex;
+    color: white;
+    margin: 1.5em 1em;
+}
+
+.sidenav ul li div{
+    margin-left: 0.5em;
+}
+
+.resto{
+    flex: 4;
+}
+
+.whiting{
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 80%;
+    margin: auto;
+}
+
+.resto h1{
+    text-align: center;
+
+}
+
+.resto .title{
+    margin: 0.5em auto;
+}
+
+.back{
+    background-image: url("	https://live.staticflickr.com/65535/49197710168_014f46e3a2_w.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 8em;
+}
+
+h1.back{
+    color: orangered;
+    line-height: 8em;
+}
+
+.back + p{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+.back ~ button{
+    margin-left: 40%;
+    margin-top: 0.5em;
+    font-weight: bolder;
+    color: rgb(167, 43, 12);
+    background: burlywood radial-gradient(circle, rgba(231, 118, 42, 0.8) 0.25em, rgba(255, 199, 14, 0.8) 0.15em ) center / 0.3em 0.8em;
+
+    border: 3px solid rgb(167, 43, 12) ;
+
+	transition: all 1s ease;
+  	padding: 1em 3em;
+}
+
+.back ~ button:hover{
+    background: burlywood radial-gradient(circle, rgba(255, 199, 14, 0.8) 0.25em, rgba(231, 118, 42, 0.8) 0.15em ) center / 0.8em 0.3em;
+}
+
+/*three columns on a row to adapt in the media query */
+.ombra{
+    margin-top: 0.5em;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.ombra li:nth-child(2){
+    border-left: 1px brown solid;
+    border-right: 1px brown solid;
+    box-shadow: 7px 0 8px -4px rgba(165, 42, 42, 0.644), -7px 0 8px -4px rgba(165, 42, 42, 0.651) ;
+}
+
+/*this is where we perfect the round border*/
+.ombra i{
+    border: 1px brown solid;
+    padding: 0.6em;
+    border-radius: 100%;
+    color: #C80815;
+}
+
+.ombra i::before{
+    display: inline-block;
+    padding: 1em;
+    border-radius: 100%;
+    border: 1px rgba(165, 42, 42, 0.6) solid;
+}
+
+.ombra li{
+    padding: 0.2em 0.5em;
+    flex: 1;
+}
+
+.incluso{
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.incluso button{
+    padding: 1em 3em;
+    border: 1px brown solid;
+    background-color: orange;
+    color: brown;
+    margin-top: 0.5em;
+
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    transition: all 0.4s linear;
+}
+
+.incluso button:after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+
+    height: 100%;
+    width: 0%;
+    bottom: 0%;
+    right: 0%;
+
+    z-index: -1;
+    background-color: brown;
+    transition: all 0.4s linear;
+
+}
+
+.incluso button:hover{
+    color: orange;
+    background-color: brown;
+    border: orange 1px solid
+}
+
+.incluso button:hover:after{
+    width: 100%;
+    right: auto;
+    left: 0%;
+}
+
+/* in our case for columns and bigger images adapting to the rows*/
+.incluso .dentro:nth-child(1){
+    flex: 1;
+}
+
+.dentro{
+    text-align: center;
+    margin: 0 0.5em;
+}
+
+.dentro img{
+    width: 100%;
+}
+
+.incluso .dentro:nth-child(2){
+    flex: 3;
+}
+
+.incluso1{
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.incluso1 button{
+    font-weight: bolder;
+    margin-top: 0.5em;
+    padding: 1em 3em;
+    border: 1px brown solid;
+    background-color: orange;
+    color: brown;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 1s linear;
+
+    position: relative;
+}
+
+.incluso1 button:after{
+    content: "";
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+
+    height: 100%;
+    width: 0%;
+    background-color: brown;
+    color: orange;
+    transition: all 0.4s linear;
+
+    z-index: -1;
+}
+
+.incluso1 button:hover{
+	color: orange;
+	border: 1px orange solid;
+	background-color: brown;
+
+}
+
+/*in the layer effect this happear first */
+.incluso1 button:hover::after{
+	right: 0%;
+    left: auto;
+	width: 100%;
+}
+
+.griglia{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0.5em 3em;
+}
+
+.griglia div{
+    flex: 33%;
+    text-align: center;
+    padding: 3em 1em;
+}
+
+.griglia div:first-child{
+    border-right: 1px black solid;
+}
+
+.griglia div:nth-child(3n+1){
+    border-right: 1px black solid;
+}
+
+.griglia div:nth-child(3n){
+    border-left: 1px black solid;
+}
+
+.colorato{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.colorato li{
+    padding: 2em;
+    text-align: center;
+    color: white;
+    flex: 1;
+}
+
+.colorato li:nth-child(odd){
+    background-color: brown;
+}
+
+.colorato li:nth-child(even){
+    background-color: orange;
+}
+
+.oltre{
+    display: flex;
+    flex-direction: row;
+}
+
+.oltre .quatto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.quatto div{
+    background-image: url("https://live.staticflickr.com/65535/49197710168_014f46e3a2_w.jpg");
+
+    flex: 40%;
+    margin: 5px 0.5em;
+    
+}
+
+.oltre .parole{
+    flex: 1;
+    margin: 1em 2em;
+}
+
+.oltre .parole p{
+    line-height: 2em;
+}
+
+.linato{
+    display: flex;
+    flex-direction: row;
+}
+
+.linato div{
+    flex: 1;
+    text-align: left;
+    margin: 0.5em 0em;
+
+}
+
+.linato div:first-child{
+    text-align: center;
+}
+
+/*so, border0 and position*/
+.linato div:first-child button{
+    padding: 0.5em 2em;
+    background-color: orange;
+    color: brown;
+    
+    position: relative;
+    box-sizing: border-box;
+    border: 0;
+    
+}
+
+/*defining content"" and starting width/height also startong border*/
+.linato div:first-child button:before,
+.linato div:first-child button:after{
+    content: "";
+    box-sizing: inherit;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 3px solid transparent;
+}
+
+/*now, lets set position and transition */
+.linato div:first-child button:before{
+    top: 0;
+    left: 0;
+}
+
+.linato div:first-child button:after{
+    bottom: 0;
+    right: 0;
+}
+
+/*ok so, now for the hover of both, for the before to be visible*/
+.linato div:first-child button:hover:before,
+.linato div:first-child button:hover:after{
+    width: 100%;
+    height: 100%;
+}
+
+/*so, we add the last s in transition for ..... also, we working with colors of borders*/
+.linato div:first-child button:hover:before{
+    border-top-color: brown ;
+    border-right-color: brown ;
+    transition: width 0.4s linear, height 0.4s linear 0.4s;
+}
+
+/*so, the second half starts as a delay of the 2 transitions on :before, then add the last delays
+to the first, */
+.linato div:first-child button:hover:after{
+    border-bottom-color: brown ;
+    border-left-color: brown ;
+    transition: border-color 0s linear 0.8s, width 0.4s linear 0.8s, height 0.4s linear 1.2s;
+}
+
+
+.linato div:nth-child(2) button{
+
+	color: brown;
+	background: orange;
+	border: 3px solid brown;
+
+  	overflow: hidden;
+  	position: relative;
+	display: flex;
+	justify-content: center;
+  	align-items: center;
+  	padding: 1.2em 3em;
+}
+
+.linato div:nth-child(2) button a{
+	position: absolute;
+	z-index: 2;
+    text-decoration: none;
+}
+
+.linato div:nth-child(2) button::before,
+.linato div:nth-child(2) button::after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -8em;
+	right: 1em;
+	bottom: 0;
+	margin: auto;
+
+	border-radius: 50%;
+
+	width: 22em;
+	height: 22em;
+
+	transition: box-shadow 0.5s ease-out;
+	transition-delay: 0.75s;
+
+	z-index: 1;
+}
+
+.linato div:nth-child(2) button::after{
+	transition-delay: 0.25s;
+}
+
+.linato div:nth-child(2) button:hover{
+	color: #fff;
+    animation: minn 1.5s ease;
+
+}
+
+.linato div:nth-child(2) button:hover::before{
+	box-shadow: inset 0 0 0 11em rgb(245, 180, 59);
+	transition-delay: 0.05s;
+
+}
+
+.linato div:nth-child(2) button:hover::after{
+	box-shadow: inset 0 0 0 11em brown;
+	transition-delay: 0.5s;
+
+}
+
+/*for this animation to work we needed to remove the href from the a*/
+@keyframes minn{
+	0% {
+	  color: #d3b7f7;
+	}
+	50% {
+	  color: brown;
+	}
+	100% {
+	  color: orange;
+
+	}
+}
+  
+.extra{
+    display: none;
+}
+
+.adatta{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.adatta li{
+    padding: 1em 3em;
+    color: white;
+    flex: 30%;
+    background-color: brown;
+}
+
+.adatta li:nth-child(5){
+    flex: 70%;
+    background-image: url("https://live.staticflickr.com/65535/49197710168_014f46e3a2_w.jpg");
+    background-position: center;
+    color: black;
+}
+
+.adatta li:nth-child(3n+1){
+    flex: 70%;
+    background-image: url("https://live.staticflickr.com/65535/49197710168_014f46e3a2_w.jpg");
+    background-position: center;
+    color: black;
+}
+
+.cata{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.cata li{
+    margin: 2em 0.2em;
+    text-align: center;
+}
+
+.foot{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    flex: 100%;
+    color: white
+}
+
+.fine{
+    display: flex;
+    flex-direction: row;
+    flex: 100%;
+    margin: 1em 3em;
+}
+
+
+.fine ul li{
+    margin: 0.8em 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.fine .parole, ul{
+    flex: 1;
+}
+
+.parole button{
+    margin: 1em 0em;
+}
+
+.square {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.square li{
+    margin: 1.5em;
+    border: 1px pink solid;
+    padding: 1em;
+    transform: rotate(-45deg);
+}
+
+.square li i{
+    color:rgba(255, 199, 14, 0.8);
+    transform: rotate(45deg)
+}
+
+.parole button{
+    background-color: transparent;
+    color: white;
+    border: 1px solid;
+    padding: 0.6em 1.2em;
+}
+
+.parole button:hover {
+    color: brown;
+  
+}
+
+.parole button:hover {
+    background-color: orange;
+  
+    box-shadow: -8px -8px 70px 10px rgba(255, 166, 0, 0.795);
+  }
+
+
+
+@media only screen and (max-width: 900px)  {
+    .contiene{
+        flex-direction: column;
+    }
+    .sidenav ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-left: 4em;
+    }
+    .sidenav ul li span{
+        margin-left: 0.2em;
+    }
+    .sidenav ul li{
+        flex: 1;
+        margin: 1em 0.5em;
+    }
+    .sidenav .title{
+        display: none;
+    }
+    .ombra{
+        flex-direction: column;
+    }
+    .ombra li:nth-child(2){
+        box-shadow: none;
+        border-left: none;
+        border-right: none;
+        border-top: 1px brown solid;
+        border-bottom: 1px brown solid;
+    
+    }
+    .griglia div{
+        flex: 50%;
+    }
+    .griglia div:nth-child(3n){
+        flex: 100%;
+    }
+    .colorato{
+        flex-direction: column;
+    }
+
+    .oltre{
+        flex-direction: column;
+    }
+    .quatto{
+        flex-direction: column;
+    }
+    /*even if we have flex we need a height in this case*/
+    .quatto div{
+        height: 4em;
+        flex: 100%;
+    }
+    .linato div{
+        flex: 100%;
+        text-align: center;
+    }
+    .linato div:nth-child(2n){
+        display: none;
+    }
+    .extra{
+        display: block;
+        flex: 100%;
+        text-align: center;
+    }
+    .extra button{
+        border: brown 1px solid;
+        color: brown;
+        background-color: orange;
+        padding: 0.6em 1.2em;
+    }
+    .adatta li:nth-child(n){
+        flex: 50%;
+    }
+    .fine{
+        flex-direction: column;
+    }
+    .square{
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .sidenav ul{
+        flex-direction: column;
+        margin-left: 0em;
+    }
+    .sidenav ul li{
+        text-align: center;
+        display: flex;
+        margin: 0.5em 40%;
+
+    }
+    .sidenav ul li:first-child{
+        margin-top: 1.2em;
+    }
+    .incluso{
+        flex-direction: column;
+    }
+    .incluso1{
+        flex-direction: column;
+    }
+    .incluso img{
+        width: 50%;
+    }
+    .incluso1 img{
+        width: 50%;
+    }
+    .cata{
+        flex-direction: column;
+        margin: 1em 2em;
+    }
+    .foot{
+        flex-direction: column;
+    }
+}
